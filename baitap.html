@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+FAST<label><input type="checkbox" onchange="check1()" id="fast"></label><br>
+GOOD<label><input type="checkbox" onchange="check2()" id="good"></label><br>
+CHEAP<label><input type="checkbox" onchange="check3()" id="cheap"></label>
+<script>
+    let index = 0;
+    function check1(){
+        if(document.getElementById("good").checked === true&&document.getElementById("cheap").checked === true){
+            index = Math.floor(Math.random() * 2 + 1);
+            if(index===1){
+                document.getElementById("good").checked = false;
+            } else {
+                document.getElementById("cheap").checked = false;
+            }
+        }
+    }
+    function check2(){
+        if(document.getElementById("fast").checked === true&&document.getElementById("cheap").checked === true){
+            index = Math.floor(Math.random() * 2 + 1);
+            if(index===1){
+                document.getElementById("fast").checked = false;
+            } else {
+                document.getElementById("cheap").checked = false;
+            }
+        }
+    }
+    function check3(){
+        if(document.getElementById("good").checked === true&&document.getElementById("fast").checked === true){
+            index = Math.floor(Math.random() * 2 + 1);
+            if(index===1){
+                document.getElementById("good").checked = false;
+            } else {
+                document.getElementById("fast").checked = false;
+            }
+        }
+    }
+</script>
+</body>
+</html>
