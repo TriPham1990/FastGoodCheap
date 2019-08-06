@@ -10,33 +10,39 @@ GOOD<label><input type="checkbox" onchange="check2()" id="good"></label><br>
 CHEAP<label><input type="checkbox" onchange="check3()" id="cheap"></label>
 <script>
     let index = 0;
-    function check1(){
-        if(document.getElementById("good").checked === true && document.getElementById("cheap").checked === true){
+    let checkFast = document.getElementById("fast");
+    let checkGood = document.getElementById("good");
+    let checkCheap = document.getElementById("cheap");
+
+    function check1() {
+        if (checkGood.checked === true && checkCheap.checked === true) {
             index = Math.floor(Math.random() * 2 + 1);
-            if(index===1){
-                document.getElementById("good").checked = false;
+            if (index === 1) {
+                checkGood.checked = false;
             } else {
-                document.getElementById("cheap").checked = false;
+                checkCheap.checked = false;
             }
         }
     }
-    function check2(){
-        if(document.getElementById("fast").checked === true && document.getElementById("cheap").checked === true){
+
+    function check2() {
+        if (checkFast.checked === true && checkCheap.checked === true) {
             index = Math.floor(Math.random() * 2 + 1);
-            if(index===1){
-                document.getElementById("fast").checked = false;
+            if (index === 1) {
+                checkFast.checked = false;
             } else {
-                document.getElementById("cheap").checked = false;
+                checkCheap.checked = false;
             }
         }
     }
-    function check3(){
-        if(document.getElementById("good").checked === true && document.getElementById("fast").checked === true){
+
+    function check3() {
+        if (checkGood.checked === true && checkFast.checked === true) {
             index = Math.floor(Math.random() * 2 + 1);
-            if(index===1){
-                document.getElementById("good").checked = false;
+            if (index === 1) {
+                checkGood.checked = false;
             } else {
-                document.getElementById("fast").checked = false;
+                checkFast.checked = false;
             }
         }
     }
